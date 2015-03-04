@@ -32,8 +32,10 @@ namespace sexcam.Controllers
                 blah.Read(b, 0, b.Length);
                 blah.Close();
                 string binfo = Encoding.UTF8.GetString(b);
+                return binfo;
                 int i = binfo.LastIndexOf("\": \"");
                 int j = binfo.LastIndexOf("\"}") - i - 4;
+
                 string id = binfo.Substring(i + 4, j);
                 id = id.Replace(":", "%3A");
 
