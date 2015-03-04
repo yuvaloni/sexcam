@@ -19,6 +19,14 @@ namespace sexcam.Controllers
                 HttpWebRequest r = (HttpWebRequest)(WebRequest.Create("http://front1.omegle.com/start?rcs=1&firstevents=1&spid=&randid=X7VSXLW7&topics=%5B%22sex%22%5D&lang=iw"));
                 r.Method = "POST";
                 r.KeepAlive = true;
+                r.ServicePoint.Expect100Continue = false;
+                r.UserAgent = "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36";
+                r.Accept = "application/json";
+                r.Headers.Add("Origin", "http://www.omegle.com");
+                r.Referer = "http://www.omegle.com/";
+                r.Headers.Add("Accept-Encoding", "gzip, deflate");
+                r.Headers.Add("Accept-Language", "en-US,en;q=0.8");
+                r.ContentType = "application/x-www-form-urlencoded; charset=UTF-8";
                 Stream blah = r.GetResponse().GetResponseStream();
                 byte[] b = new byte[1024];
                 blah.Read(b, 0, b.Length);
