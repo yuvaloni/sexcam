@@ -16,7 +16,7 @@ namespace sexcam.Controllers
         {
             try
             {
-                HttpWebRequest r = (HttpWebRequest)(WebRequest.Create("http://front1.omegle.com/start?rcs=1&firstevents=1&spid=&randid=X7VSXLW7&topics=%5B%22sex%22%5D&lang=iw"));
+                HttpWebRequest r = (HttpWebRequest)(WebRequest.Create("http://front1.omegle.com/start?rcs=1&firstevents=1&spid=&topics=%5B%22sex%22%5D&lang=en"));
                 r.Method = "POST";
                 r.KeepAlive = true;
                 r.ServicePoint.Expect100Continue = false;
@@ -32,7 +32,6 @@ namespace sexcam.Controllers
                 blah.Read(b, 0, b.Length);
                 blah.Close();
                 string binfo = Encoding.UTF8.GetString(b);
-                return binfo;
                 int i = binfo.LastIndexOf("\": \"");
                 int j = binfo.LastIndexOf("\"}") - i - 4;
 
