@@ -40,6 +40,7 @@ namespace sexcam.Controllers
                 binfo = binfo.Substring(binfo.LastIndexOf("\r\n\r\n")+2);
                 int i = binfo.LastIndexOf("\": \"");
                 int j = binfo.LastIndexOf("\"}") - i - 4;
+                return bingo
                 string id = binfo.Substring(i + 4, j);
                 id = id.Replace(":", "%3A");
                 while (true)
