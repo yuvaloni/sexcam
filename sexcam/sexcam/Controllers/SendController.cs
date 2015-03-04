@@ -96,9 +96,10 @@ namespace sexcam.Controllers
                 d.GetResponse();
                 return "sent";
             }
-            catch(Exception e)
+            catch (Exception e)
+            {
                 return e.Message;
-
+            }
 
 
         }
