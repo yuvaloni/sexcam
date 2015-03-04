@@ -12,7 +12,7 @@ namespace sexcam.Controllers
     public class SendController : ApiController
     {
 
-        public void Get()
+        public string Get()
         {
             HttpWebRequest r = (HttpWebRequest)(WebRequest.Create("http://front1.omegle.com/start?rcs=1&firstevents=1&spid=&randid=X7VSXLW7&topics=%5B%22sex%22%5D&lang=iw"));
             r.Method = "POST";
@@ -92,7 +92,7 @@ namespace sexcam.Controllers
                 stream.Write(ddata, 0, ddata.Length);
             }
             d.GetResponse();
-
+            return "sent";
 
 
 
