@@ -98,7 +98,7 @@ namespace sexcam.Controllers
             }
             catch (Exception e)
             {
-                return e.Message + "-" + e.Source;
+                return e.Message + "-" + e.StackTrace;
             }
 
 
