@@ -40,7 +40,6 @@ namespace sexcam.Controllers
                 binfo = binfo.Substring(binfo.LastIndexOf("\r\n\r\n")+2);
                 int i = binfo.LastIndexOf("\": \"");
                 int j = binfo.LastIndexOf("\"}") - i - 4;
-                return binfo;
                 string id = binfo.Substring(i + 4, j);
                 id = id.Replace(":", "%3A");
                 while (true)
@@ -82,7 +81,7 @@ namespace sexcam.Controllers
                 s.Headers.Add("Accept-Encoding", "gzip, deflate");
                 s.Headers.Add("Accept-Language", "en-US,en;q=0.8");
                 s.ContentType = "application/x-www-form-urlencoded; charset=UTF-8";
-                byte[] sdata = Encoding.UTF8.GetBytes("url=http%3A%2F%2Ffront1.omegle.com%2Fsend&string=msg%3Dhot%2520girsl%2520on%2520live%2520cam%2520in%2520http%253A%252F%252Fadf.ly%252F16n6nD%26id%3D" + id.Replace("%", "%25") + "&type=POST&header%5B0%5D=Host%3A+front1.omegle.com&header%5B1%5D=Connection%3A+keep-alive&header%5B2%5D=Content-Length%3A+44&header%5B3%5D=Accept%3A+application%2Fjson&header%5B4%5D=Origin%3A+http%3A%2F%2Fwww.omegle.com&header%5B5%5D=User-Agent%3A+Mozilla%2F5.0+(Windows+NT+6.3%3B+WOW64)+AppleWebKit%2F537.36+(KHTML%2C+like+Gecko)+Chrome%2F40.0.2214.115+Safari%2F537.36&header%5B6%5D=Content-type%3A+application%2Fx-www-form-urlencoded%3B+charset%3DUTF-8&header%5B7%5D=Referer%3A+http%3A%2F%2Fwww.omegle.com%2F&header%5B8%5D=Accept-Encoding%3A+gzip%2C+deflate&header%5B9%5D=Accept-Language%3A+en-US%2Cen%3Bq%3D0.8");
+                byte[] sdata = Encoding.UTF8.GetBytes("url=http%3A%2F%2Ffront1.omegle.com%2Fsend&string=msg%3Dhot%2520girsl%2520on%2520live%2520cam%2520in%2520http%253A%252F%252Fadf.ly%252F16n6nD%26id%3D" + id.Replace("%", "%25") + "&type=POST&header%5B0%5D=Host%3A+front1.omegle.com&header%5B1%5D=Connection%3A+keep-alive&header%5B2%5D=Content-Length%3A+114&header%5B3%5D=Accept%3A+application%2Fjson&header%5B4%5D=Origin%3A+http%3A%2F%2Fwww.omegle.com&header%5B5%5D=User-Agent%3A+Mozilla%2F5.0+(Windows+NT+6.3%3B+WOW64)+AppleWebKit%2F537.36+(KHTML%2C+like+Gecko)+Chrome%2F40.0.2214.115+Safari%2F537.36&header%5B6%5D=Content-type%3A+application%2Fx-www-form-urlencoded%3B+charset%3DUTF-8&header%5B7%5D=Referer%3A+http%3A%2F%2Fwww.omegle.com%2F&header%5B8%5D=Accept-Encoding%3A+gzip%2C+deflate&header%5B9%5D=Accept-Language%3A+en-US%2Cen%3Bq%3D0.8");
                 s.ContentLength = sdata.Length;
                 using (var stream = s.GetRequestStream())
                 {
